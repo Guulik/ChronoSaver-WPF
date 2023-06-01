@@ -6,7 +6,145 @@
         xmlns:local="clr-namespace:ChronoSaver"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="RoundButton">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                    <Setter Property="Margin" Value="5" />
+                    <Setter Property="VerticalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Width" Value="140" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style TargetType="RadioButton" x:Key="SlotRadioButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <Border x:Name="Slot_" 
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="#E5FFF7"
+                                CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Slot_" Property="BorderBrush" Value="Yellow" />
+                                <Setter TargetName="Slot_" Property="BorderThickness" Value="4" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Width" Value="256"/>
+            <Setter Property="Height" Value="180"/>
+            <Setter Property="Grid.RowSpan" Value="3"/>
+        </Style>
+
+        <Style TargetType="StackPanel" x:Key="StackPanelStyle">
+            <Setter Property="Orientation" Value="Vertical" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="SlotText">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Image" x:Key="SlotImage">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="Width" Value="256"/>
+            <Setter Property="Height" Value="140"/>
+        </Style>
+
+        <Style TargetType="Border" x:Key="RoundСorners">
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Name="grid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Button Style="{DynamicResource RoundButton}" 
+                Name="btnSave" Height="auto" Width="150"
+                Background="#FFA5B0" 
+                Grid.Row="5" Grid.Column="2"
+                Content="Save" FontSize="20"
+                Click="btnSave_Click"/>
+        <Button Style="{DynamicResource RoundButton}"  
+                Name="btnLoad" Height="auto" Width="150"
+                Background="#C9D8E9"
+                Grid.Row="5" Grid.Column="0" 
+                Content="Load" FontSize="20"
+                Click="btnLoad_Click" />
+
+
+        <RadioButton GroupName="Slots" 
+                         Style="{StaticResource SlotRadioButton}"
+                         Grid.Column="0" Grid.Row="2"
+                         >
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image Source="O:\Desktop\1.jpg" 
+                           Style="{StaticResource SlotImage}"/>
+                
+                <TextBlock Text="Слот 1"
+                               Style="{StaticResource SlotText}"
+                               />
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Slots"
+                         Style="{StaticResource SlotRadioButton}"
+                         Grid.Column="1" Grid.Row="2"
+                         >
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image Source="O:\Desktop\2.jpg" 
+                            Style="{StaticResource SlotImage}"/>
+                
+                <TextBlock Text="Слот 2"
+                               Style="{StaticResource SlotText}"
+                               />
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Slots"
+                     Style="{StaticResource SlotRadioButton}"
+                     Grid.Column="2" Grid.Row="2"
+                     >
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image Source="O:\Desktop\3.jpg" 
+                       Style="{StaticResource SlotImage}"/>
+                
+                <TextBlock Text="Слот 3"
+                           Style="{StaticResource SlotText}"
+                           />
+            </StackPanel>
+        </RadioButton>
 
     </Grid>
 </Window>
