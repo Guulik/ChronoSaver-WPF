@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        
         <Style TargetType="Button" x:Key="RoundButton">
             <Style.Resources>
                 <Style TargetType="Border">
@@ -102,49 +103,63 @@
                 Grid.Row="5" Grid.Column="0" 
                 Content="Load" FontSize="20"
                 Click="btnLoad_Click" />
+        
 
 
         <RadioButton GroupName="Slots" 
                          Style="{StaticResource SlotRadioButton}"
-                         Grid.Column="0" Grid.Row="2"
-                         >
+                         Grid.Column="0" Grid.Row="1" Grid.RowSpan="4"
+                         IsChecked="{Binding Path=SlotArray[0], Mode=TwoWay}"
+                         Click="SlotRadioButton_Click">
             <StackPanel Style="{StaticResource StackPanelStyle}">
-                <Image Source="O:\Desktop\1.jpg" 
-                           Style="{StaticResource SlotImage}"/>
-                
+                <Image 
+                    Source="{Binding ImageSource[0], UpdateSourceTrigger=PropertyChanged}" 
+                    Style="{StaticResource SlotImage}"/>
                 <TextBlock Text="Слот 1"
-                               Style="{StaticResource SlotText}"
-                               />
-            </StackPanel>
-        </RadioButton>
-
-        <RadioButton GroupName="Slots"
-                         Style="{StaticResource SlotRadioButton}"
-                         Grid.Column="1" Grid.Row="2"
-                         >
-            <StackPanel Style="{StaticResource StackPanelStyle}">
-                <Image Source="O:\Desktop\2.jpg" 
-                            Style="{StaticResource SlotImage}"/>
-                
-                <TextBlock Text="Слот 2"
-                               Style="{StaticResource SlotText}"
-                               />
+                               Style="{StaticResource SlotText}"/>
             </StackPanel>
         </RadioButton>
 
         <RadioButton GroupName="Slots"
                      Style="{StaticResource SlotRadioButton}"
-                     Grid.Column="2" Grid.Row="2"
-                     >
+                     Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"
+                     IsChecked="{Binding Path=SlotArray[1], Mode=TwoWay}"
+                     Click="SlotRadioButton_Click">
             <StackPanel Style="{StaticResource StackPanelStyle}">
-                <Image Source="O:\Desktop\3.jpg" 
-                       Style="{StaticResource SlotImage}"/>
-                
-                <TextBlock Text="Слот 3"
-                           Style="{StaticResource SlotText}"
-                           />
+                <Image Source="{Binding ImageSource[1], UpdateSourceTrigger=PropertyChanged}" 
+                            Style="{StaticResource SlotImage}"/>
+                <TextBlock Text="Слот 2"
+                               Style="{StaticResource SlotText}"/>
             </StackPanel>
         </RadioButton>
 
+        <RadioButton GroupName="Slots"
+                     Style="{StaticResource SlotRadioButton}"
+                     Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"
+                     IsChecked="{Binding Path=SlotArray[2], Mode=TwoWay}"
+                     Click="SlotRadioButton_Click">
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image
+                        Source="{Binding ImageSource[2], UpdateSourceTrigger=PropertyChanged}" 
+                       Style="{StaticResource SlotImage}"/>
+                
+                <TextBlock Text="Слот 3"
+                           Style="{StaticResource SlotText}"/>
+            </StackPanel>
+        </RadioButton>
+
+        <!-- отладочная информация -->
+        <TextBlock Name="path"
+                   Grid.Row="6" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="unAllocated"/>
+        <!-- по хорошему нужно сделать через binding
+        "{Binding Path=userSavePath, Mode=TwoWay}" -->
+        <TextBlock Name="status"
+                   Grid.Row="0" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="welcome"/>
     </Grid>
 </Window>
