@@ -1,89 +1,108 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Media.Media3D;
+using System.Windows.Media.Imaging;
 
 namespace ChronoSaver
 {
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public struct MyPaths
     {
+        public static string ChronoSaverPath =
+         Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..");
 
-        private static string ChronoSaverPath =
-             Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..");
-
-        private static string gamePath =
+        public static string gamePath =
              Path.Combine(ChronoSaverPath, @"..");
 
-        static string sourcePath =
+        public static string sourcePath =
             $@"{gamePath}\mlc01\usr\save\00050000\101c9500\user\80000001";
 
-        public string userSavePath =
+        public static string useChoicePath =
             $@"{ChronoSaverPath}\usrSaves\unAllocated";//for saves
 
-        static string testPath =
+        public static string testPath =
             $@"{ChronoSaverPath}\test\destination";//for load function
 
-        private void changeImage()
-        {
-            for (int i = 0; i < _imageSource.Length - 1; i++)
-            {
-                if (!File.Exists(_imageSource[i]))
-                {
-                    _imageSource[i] = _imageSource[3];
-                }
-                else
-                {
-                    continue;
-                }
-            }
-        }
-        private string[] _imageSource =
-        {
-            //превьюшки изменены с целью демонстрации
-            //нужно поменять вторую циферку на 0, чтобы они подгружались корректно
-            $@"{ChronoSaverPath}\usrSaves\1\0\caption.jpg",
-            $@"{ChronoSaverPath}\usrSaves\2\0\caption.jpg",
-            $@"{ChronoSaverPath}\usrSaves\3\0\caption.jpg",
-            $@"{ChronoSaverPath}\usrSaves\empty.jpg"
-        };
 
-        public string[] ImageSource
+    }
+    public partial class MainWindow : Window, INotifyPropertyChanged
+    {
+        //copy files FROM src TO dst
+        public MainWindow()
         {
-            get
-            {
-                changeImage();
-                return _imageSource;
-                /*
-                string outImagePath = $@"{ChronoSaverPath}\usrSaves\empty.jpg";
-                foreach (string image in _imageSource)
-                {
-                    if (!File.Exists(image) || SelectedSlot == -1)
-                    {
-                        outImagePath = _imageSource[3];
-                    }
-                    else
-                    {
-                        outImagePath = _imageSource[SelectedSlot];
-                    }
-                }
-
-                return outImagePath;
-                */
-            }
-            set { OnPropertyChanged(); }
+            DataContext = this;
+            InitializeComponent();
+            
         }
+
+        private static void Copy(string src, string dst)
+        { FileMethods.CopyDirectory(src, dst); }
+        private static void Delete(string folder) 
+        { FileMethods.DeleteFolder(folder); }
+        
 
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private string[] _imagePaths =
+        {
+            $@"{MyPaths.ChronoSaverPath}\usrSaves\1\0\caption.jpg",
+            $@"{MyPaths.ChronoSaverPath}\usrSaves\2\0\caption.jpg",
+            $@"{MyPaths.ChronoSaverPath}\usrSaves\3\0\caption.jpg",
+        };
+
+        private List<BitmapImage> _images = new List<BitmapImage>();
+        private void ChangeImage()
+        {
+            for (int i = 0; i < _imagePaths.Length; i++)
+            {
+                string imagePath = _imagePaths[i];
+                if (!File.Exists(_imagePaths[i]))
+                {
+                    imagePath = $@"{MyPaths.ChronoSaverPath}\usrSaves\empty.jpg";
+                }
+                // Освободить ресурсы предыдущего BitmapImage (если есть)
+                /*if (_images.Count > i && _images[i] != null)
+                {
+                    _images[i].UriSource = null;
+                    _images[i] = null;
+                }*/
+
+                // Создать новый BitmapImage
+                BitmapImage bitmapImage = new BitmapImage(new Uri(imagePath));
+                //_imagePaths[i] = imagePath;
+                _images.Add(bitmapImage);
+            }
+            //OnPropertyChanged("ImageSource");
+
+        }
+
+        public List<BitmapImage> ImageSource
+        {
+            get
+            {
+                ChangeImage();
+                return _images;
+            }
+            set 
+            {
+                //OnPropertyChanged("ImageSource");
+            }
+        }
+        /*public string SelectedImage
+        {
+            get { return _imagePaths[SelectedSlot]; }
+            set { OnPropertyChanged(); }
+        }*/
+
+
 
         private bool[] _slotArray = new bool[] { false, false, false };
         public bool[] SlotArray
@@ -94,44 +113,68 @@ namespace ChronoSaver
         public int SelectedSlot
         {
             get { return Array.IndexOf(_slotArray, true); }
-            set { OnPropertyChanged(); }
-        }
-        public MainWindow()
-        {
-            InitializeComponent();
-            DataContext = this;
+            set { OnPropertyChanged("SlotArray"); }
         }
 
-        //copy FROM src TO dst
-        public static void Copy(string src, string dst)
-        { FileMethods.CopyDirectory(src, dst); }
+        private string _savePath = "unAllocated";
+        public string SavePath
+        {
+            get {
+                return _savePath; }
+            set
+            {
+                if (_savePath != value)
+                {
+                    _savePath = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
+        private string[] _statuses = 
+        { 
+            "Chrono successfully saved! no need to worry",
+            "Chrono loaded! check it in game now",
+            "You deleted the chrono. Good bye!! :)"
+        };
+        private string _status = "hola";
+        public string Status
+        {
+            get { return _status; } 
+            set { _status = value;
+                OnPropertyChanged();} 
+        }
+        
+
+        
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            Copy(sourcePath, userSavePath);
-            status.Text = "Chrono successfully saved! no need to worry";
+            Copy(MyPaths.sourcePath, MyPaths.useChoicePath);
+            ChangeImage();
+            //OnPropertyChanged("ImageSource");
+            Status = _statuses[0];
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
-        {
-            Copy(userSavePath, sourcePath);
-            status.Text = "Chrono loaded! check it in game now";
+        {   
+            Copy(MyPaths.useChoicePath, MyPaths.sourcePath);
+            Status = _statuses[1];
         }
         private void SlotRadioButton_Click(object sender, RoutedEventArgs e)
         {
-            userSavePath = SelectedSlot != -1 ?
-                Path.Combine(ChronoSaverPath, "usrSaves", (SelectedSlot + 1).ToString())
-                : userSavePath;
+            MyPaths.useChoicePath = SelectedSlot != -1 ?
+                Path.Combine(MyPaths.useChoicePath+@"\..",
+                (SelectedSlot + 1).ToString()) : MyPaths.useChoicePath;
             //отладочная информация
-            path.Text = userSavePath;//костыль. по хорошему надо через binding
+            SavePath = (SelectedSlot + 1).ToString();
         }
 
-        private void Image_Loaded(object sender, RoutedEventArgs e)
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            ((Image)sender).GetBindingExpression(Image.SourceProperty)
-                              .UpdateTarget();
+            Delete(MyPaths.useChoicePath);
+            Status = _statuses[2];
         }
-
-      
     }
 }

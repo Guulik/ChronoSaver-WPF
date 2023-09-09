@@ -40,3 +40,6 @@ P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\refint\ChronoS
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\ChronoSaver.pdb
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\ChronoSaver.genruntimeconfig.cache
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\ref\ChronoSaver.dll
+P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\View\UserControls\ChronoButton.g.cs
+P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\View\UserControls\ChronoButton.baml
