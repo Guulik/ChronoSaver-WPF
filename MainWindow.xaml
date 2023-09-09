@@ -4,22 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChronoSaver"
+        xmlns:userControls = "clr-namespace:ChronoSaver.View.UserControls"
+        d:DataContext="{d:DesignInstance Type=local:MainWindow}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        
-        <Style TargetType="Button" x:Key="RoundButton">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10" />
-                    <Setter Property="Margin" Value="5" />
-                    <Setter Property="VerticalAlignment" Value="Stretch" />
-                    <Setter Property="HorizontalAlignment" Value="Center" />
-                    <Setter Property="Height" Value="Auto" />
-                    <Setter Property="Width" Value="140" />
-                </Style>
-            </Style.Resources>
-        </Style>
+
 
         <Style TargetType="RadioButton" x:Key="SlotRadioButton">
             <Setter Property="Template">
@@ -90,30 +80,33 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-
-        <Button Style="{DynamicResource RoundButton}" 
-                Name="btnSave" Height="auto" Width="150"
-                Background="#FFA5B0" 
-                Grid.Row="5" Grid.Column="2"
-                Content="Save" FontSize="20"
-                Click="btnSave_Click"/>
-        <Button Style="{DynamicResource RoundButton}"  
-                Name="btnLoad" Height="auto" Width="150"
-                Background="#C9D8E9"
-                Grid.Row="5" Grid.Column="0" 
-                Content="Load" FontSize="20"
-                Click="btnLoad_Click" />
-        
-
+        <userControls:ChronoButton
+            x:Name="btnSave" Grid.Row="5" Grid.Column="1"
+            ContentText="Save"
+            Color="#FFA5B0"
+            ButtonBase.Click="btnSave_Click"
+            />
+        <userControls:ChronoButton
+            x:Name="btnLoad" Grid.Row="5" Grid.Column="0"
+            ContentText="Load"
+            Color="#C9D8E9"
+            ButtonBase.Click="btnLoad_Click"
+            />
+        <userControls:ChronoButton
+            x:Name="btnDelete" Grid.Row="5" Grid.Column="2"
+            ContentText="Delete"
+            Color="AliceBlue"
+            ButtonBase.Click="btnDelete_Click"
+            />
 
         <RadioButton GroupName="Slots" 
                          Style="{StaticResource SlotRadioButton}"
                          Grid.Column="0" Grid.Row="1" Grid.RowSpan="4"
-                         IsChecked="{Binding Path=SlotArray[0], Mode=TwoWay}"
+                         IsChecked="{Binding SlotArray[0], Mode=TwoWay}"
                          Click="SlotRadioButton_Click">
             <StackPanel Style="{StaticResource StackPanelStyle}">
                 <Image 
-                    Source="{Binding ImageSource[0], UpdateSourceTrigger=PropertyChanged}" 
+                    Source="{Binding ImageSource[0]}" 
                     Style="{StaticResource SlotImage}"/>
                 <TextBlock Text="Слот 1"
                                Style="{StaticResource SlotText}"/>
@@ -123,10 +116,10 @@
         <RadioButton GroupName="Slots"
                      Style="{StaticResource SlotRadioButton}"
                      Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"
-                     IsChecked="{Binding Path=SlotArray[1], Mode=TwoWay}"
+                     IsChecked="{Binding SlotArray[1], Mode=TwoWay}"
                      Click="SlotRadioButton_Click">
             <StackPanel Style="{StaticResource StackPanelStyle}">
-                <Image Source="{Binding ImageSource[1], UpdateSourceTrigger=PropertyChanged}" 
+                <Image Source="{Binding ImageSource[1]}" 
                             Style="{StaticResource SlotImage}"/>
                 <TextBlock Text="Слот 2"
                                Style="{StaticResource SlotText}"/>
@@ -136,11 +129,11 @@
         <RadioButton GroupName="Slots"
                      Style="{StaticResource SlotRadioButton}"
                      Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"
-                     IsChecked="{Binding Path=SlotArray[2], Mode=TwoWay}"
+                     IsChecked="{Binding SlotArray[2], Mode=TwoWay}"
                      Click="SlotRadioButton_Click">
             <StackPanel Style="{StaticResource StackPanelStyle}">
                 <Image
-                        Source="{Binding ImageSource[2], UpdateSourceTrigger=PropertyChanged}" 
+                        Source="{Binding ImageSource[2]}" 
                        Style="{StaticResource SlotImage}"/>
                 
                 <TextBlock Text="Слот 3"
@@ -153,13 +146,13 @@
                    Grid.Row="6" Grid.ColumnSpan="3"
                    HorizontalAlignment="Center" VerticalAlignment="Center"
                    FontSize="20"
-                   Text="unAllocated"/>
-        <!-- по хорошему нужно сделать через binding
-        "{Binding Path=userSavePath, Mode=TwoWay}" -->
+                   Text="{Binding SavePath}"/>
+        <!-- "{Binding Path=userSavePath, Mode=TwoWay}"
+        по хорошему нужно сделать через binding-->
         <TextBlock Name="status"
                    Grid.Row="0" Grid.ColumnSpan="3"
                    HorizontalAlignment="Center" VerticalAlignment="Center"
                    FontSize="20"
-                   Text="welcome"/>
+                   Text="{Binding Status}"/>
     </Grid>
 </Window>

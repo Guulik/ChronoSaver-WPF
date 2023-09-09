@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 
 namespace ChronoSaver
@@ -7,23 +8,6 @@ namespace ChronoSaver
     public class FileMethods
     {
 
-        public static void CopyFile(string src, string dst)
-        {
-            string sourceFilePath = src;
-            string destinationFolderPath = dst;
-            string destinationFilePath = Path.Combine(destinationFolderPath, Path.GetFileName(sourceFilePath));
-
-            File.Copy(sourceFilePath, destinationFilePath, true);
-        }
-        public static void MoveDirectory(string src, string dst)
-        {
-            string sourceDirectory = src;
-            string destinationDirectory = dst;
-
-
-            Directory.Move(sourceDirectory, destinationDirectory);
-
-        }
         public static void CopyDirectory(string src, string dst)
         {
             string sourceDir = src;
@@ -48,6 +32,27 @@ namespace ChronoSaver
             {
                 string destSubDir = Path.Combine(destDir, subDir.Name);
                 CopyDirectory(subDir.FullName, destSubDir);
+            }
+        }
+        public static void DeleteFolder(string folderPath)
+        {
+            try
+            {
+                // Проверяем, существует ли папка
+                if (Directory.Exists(folderPath))
+                {
+                    // Удаляем папку и её содержимое
+                    Directory.Delete(folderPath, true);
+                    Console.WriteLine($"Папка {folderPath} успешно удалена.");
+                }
+                else
+                {
+                    Console.WriteLine($"Папка {folderPath} не существует.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при удалении папки {folderPath}: {ex.Message}");
             }
         }
 
