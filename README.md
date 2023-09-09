@@ -4,4 +4,3 @@
  
  This app is destributing for free. Enjoy!
 
-P.S: this is the main version of app, founded with WPF. Also there is "ChronoSaver" repo - think of it as my first attempt where I tested main functions via console
