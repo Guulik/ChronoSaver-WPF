@@ -35,4 +35,8 @@ namespace ChronoSaver.View.UserControls
             }
         }
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

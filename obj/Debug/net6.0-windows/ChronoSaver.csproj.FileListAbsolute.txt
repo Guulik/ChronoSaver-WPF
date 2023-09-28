@@ -41,5 +41,9 @@ P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\ChronoSaver.pd
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\ChronoSaver.genruntimeconfig.cache
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\ref\ChronoSaver.dll
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+<<<<<<< Updated upstream
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\View\UserControls\ChronoButton.g.cs
 P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net6.0-windows\View\UserControls\ChronoButton.baml
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

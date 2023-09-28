@@ -10,11 +10,19 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 P:\Games\The legend of Zelda\ChronoSaver\App.xaml
+<<<<<<< Updated upstream
 21769768101
 
 8-871308657
 194-1976662911
 MainWindow.xaml;View\UserControls\ChronoButton.xaml;
+=======
+11407045341
+
+8-1775454313
+194183970531
+MainWindow.xaml;
+>>>>>>> Stashed changes
 
 False
 

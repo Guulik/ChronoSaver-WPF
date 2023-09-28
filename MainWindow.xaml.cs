@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+<<<<<<< Updated upstream
 using System.Windows.Media.Imaging;
 
 namespace ChronoSaver
@@ -25,17 +26,38 @@ namespace ChronoSaver
             $@"{ChronoSaverPath}\usrSaves\unAllocated";//for saves
 
         public static string testPath =
+=======
+
+namespace ChronoSaver
+{
+    public struct Paths
+    {
+        public static readonly string ChronoSaverPath =  Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..");
+        
+        public static readonly string ChronosSourcePath =
+            $@"P:\Games\The legend of Zelda\mlc01\usr\save\00050000\101c9500\user\80000001";
+        static string testPath =
+>>>>>>> Stashed changes
             $@"{ChronoSaverPath}\test\destination";//for load function
-
-
     }
+<<<<<<< Updated upstream
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         //copy files FROM src TO dst
+=======
+
+    public partial class MainWindow : INotifyPropertyChanged
+    {
+        private readonly ImagesHandler _imagesHandler;
+        public List<Image> Images { get; set; }
+        private string _userChosenPath = $@"{Paths.ChronoSaverPath}\usrSaves\unAllocated";
+        
+>>>>>>> Stashed changes
         public MainWindow()
         {
             DataContext = this;
             InitializeComponent();
+<<<<<<< Updated upstream
             
         }
 
@@ -43,6 +65,12 @@ namespace ChronoSaver
         { FileMethods.CopyDirectory(src, dst); }
         private static void Delete(string folder) 
         { FileMethods.DeleteFolder(folder); }
+=======
+            DataContext = this;
+            Images = new List<Image>(){SlotImage1,SlotImage2,SlotImage3};
+            _imagesHandler = new ImagesHandler(this);
+        }
+>>>>>>> Stashed changes
         
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -51,6 +79,7 @@ namespace ChronoSaver
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+<<<<<<< Updated upstream
         private string[] _imagePaths =
         {
             $@"{MyPaths.ChronoSaverPath}\usrSaves\1\0\caption.jpg",
@@ -115,6 +144,12 @@ namespace ChronoSaver
             get { return Array.IndexOf(_slotArray, true); }
             set { OnPropertyChanged("SlotArray"); }
         }
+=======
+        public bool[] SlotArray { get; set; } = { false, false, false };
+
+        public int SelectedSlot => Array.IndexOf(SlotArray, true);
+
+>>>>>>> Stashed changes
 
         private string _savePath = "unAllocated";
         public string SavePath
@@ -132,8 +167,8 @@ namespace ChronoSaver
         }
 
 
-        private string[] _statuses = 
-        { 
+        private readonly string[] _statuses =
+        {
             "Chrono successfully saved! no need to worry",
             "Chrono loaded! check it in game now",
             "You deleted the chrono. Good bye!! :)"
@@ -141,6 +176,7 @@ namespace ChronoSaver
         private string _status = "hola";
         public string Status
         {
+<<<<<<< Updated upstream
             get { return _status; } 
             set { _status = value;
                 OnPropertyChanged();} 
@@ -154,26 +190,68 @@ namespace ChronoSaver
             Copy(MyPaths.sourcePath, MyPaths.useChoicePath);
             ChangeImage();
             //OnPropertyChanged("ImageSource");
+=======
+            get => _status;
+            set
+            {
+                _status = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            FileMethods.CopyDirectory(Paths.ChronosSourcePath, _userChosenPath);
+            _imagesHandler.UpdateImage();
+
+>>>>>>> Stashed changes
             Status = _statuses[0];
         }
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
+<<<<<<< Updated upstream
         {   
             Copy(MyPaths.useChoicePath, MyPaths.sourcePath);
+=======
+        {
+            if (!Directory.Exists(_userChosenPath)) return;
+            FileMethods.CopyDirectory(_userChosenPath, Paths.ChronosSourcePath);
+
+>>>>>>> Stashed changes
             Status = _statuses[1];
         }
         private void SlotRadioButton_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< Updated upstream
             MyPaths.useChoicePath = SelectedSlot != -1 ?
                 Path.Combine(MyPaths.useChoicePath+@"\..",
                 (SelectedSlot + 1).ToString()) : MyPaths.useChoicePath;
             //отладочная информация
             SavePath = (SelectedSlot + 1).ToString();
+=======
+            _userChosenPath = SelectedSlot != -1 ?
+                Path.Combine($@"{Paths.ChronoSaverPath}\usrSaves",
+                (SelectedSlot + 1).ToString()) : _userChosenPath;
+            //debug
+            debugSavePath = _userChosenPath;
+>>>>>>> Stashed changes
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< Updated upstream
             Delete(MyPaths.useChoicePath);
+=======
+            if (!Directory.Exists(_userChosenPath))
+            {
+                //debug
+                Console.WriteLine($"Папка {_userChosenPath} не существует.");
+                return;
+            }
+            FileMethods.DeleteFolder(_userChosenPath);
+            _imagesHandler.UpdateImage();
+
+>>>>>>> Stashed changes
             Status = _statuses[2];
         }
     }

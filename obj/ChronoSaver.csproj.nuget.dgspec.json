@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "P:\\Games\\The legend of Zelda\\ChronoSaver\\ChronoSaver.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "P:\\Games\\The legend of Zelda\\ChronoSaver\\ChronoSaver.csproj",
         "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
         "outputPath": "P:\\Games\\The legend of Zelda\\ChronoSaver\\obj\\",
+=======
+    "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj": {}
+  },
+  "projects": {
+    "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj",
+        "projectName": "ChronoSaver",
+        "projectPath": "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj",
+        "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
+        "outputPath": "O:\\Desktop\\ChronoSaver\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,15 +36,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net7.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
             "projectReferences": {}
           }
         },
@@ -41,8 +55,8 @@
         }
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -62,7 +76,11 @@
               "privateAssets": "none"
             }
           },
+<<<<<<< Updated upstream
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> Stashed changes
         }
       }
     }

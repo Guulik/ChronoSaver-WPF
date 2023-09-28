@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 using System;
+=======
+﻿using System;
+>>>>>>> Stashed changes
 using System.IO;
 
 namespace ChronoSaver
@@ -7,6 +11,7 @@ namespace ChronoSaver
     //dst - stands for "destination"
     public class FileMethods
     {
+<<<<<<< Updated upstream
 
         public static void CopyDirectory(string src, string dst)
         {
@@ -27,18 +32,51 @@ namespace ChronoSaver
                 string destFile = Path.Combine(destDir, file.Name);
                 file.CopyTo(destFile, true);
             }
-
-            foreach (DirectoryInfo subDir in sourceDirInfo.GetDirectories())
+=======
+        public static void CopyDirectory(string sourcePath, string destinationPath)
+        {
+            try
             {
+                if (!Directory.Exists(destinationPath))
+                {
+                    Directory.CreateDirectory(destinationPath);
+                }
+>>>>>>> Stashed changes
+
+                DirectoryInfo sourceDirInfo = new DirectoryInfo(sourcePath);
+                foreach (FileInfo file in sourceDirInfo.GetFiles())
+                {
+                    string destFile = Path.Combine(destinationPath, file.Name);
+                    file.CopyTo(destFile, true);
+                }
+
+                foreach (DirectoryInfo subDir in sourceDirInfo.GetDirectories())
+                {
+                    string destSubDir = Path.Combine(destinationPath, subDir.Name);
+                    CopyDirectory(subDir.FullName, destSubDir);
+                }
+            }
+            catch (Exception ex)
+            {
+<<<<<<< Updated upstream
                 string destSubDir = Path.Combine(destDir, subDir.Name);
                 CopyDirectory(subDir.FullName, destSubDir);
             }
         }
+=======
+                Console.WriteLine($"Ошибка при копировании в папку {destinationPath}: {ex.Message}");
+            }
+        }
+
+>>>>>>> Stashed changes
         public static void DeleteFolder(string folderPath)
         {
             try
             {
+<<<<<<< Updated upstream
                 // Проверяем, существует ли папка
+=======
+>>>>>>> Stashed changes
                 if (Directory.Exists(folderPath))
                 {
                     // Удаляем папку и её содержимое
@@ -55,6 +93,16 @@ namespace ChronoSaver
                 Console.WriteLine($"Ошибка при удалении папки {folderPath}: {ex.Message}");
             }
         }
+<<<<<<< Updated upstream
 
+=======
+        
+        public static void CopyFile(string sourceFilePath, string destinationFolderPath)
+        {
+            string destinationFilePath = Path.Combine(destinationFolderPath, Path.GetFileName(sourceFilePath));
+            
+            File.Copy(sourceFilePath, destinationFilePath, true);
+        }
+>>>>>>> Stashed changes
     }
 }

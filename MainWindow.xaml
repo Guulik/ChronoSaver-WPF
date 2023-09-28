@@ -4,12 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChronoSaver"
+<<<<<<< Updated upstream
         xmlns:userControls = "clr-namespace:ChronoSaver.View.UserControls"
+=======
+        xmlns:userControls="clr-namespace:ChronoSaver.View.UserControls"
+>>>>>>> Stashed changes
         d:DataContext="{d:DesignInstance Type=local:MainWindow}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+<<<<<<< Updated upstream
 
+=======
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                    <Setter Property="Margin" Value="5" />
+                    <Setter Property="VerticalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Width" Value="140" />
+                </Style>
+            </Style.Resources>
+        </Style>
+>>>>>>> Stashed changes
 
         <Style TargetType="RadioButton" x:Key="SlotRadioButton">
             <Setter Property="Template">
@@ -26,7 +45,7 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="Slot_" Property="BorderBrush" Value="Yellow" />
+                                <Setter TargetName="Slot_" Property="BorderBrush" Value="Chocolate" />
                                 <Setter TargetName="Slot_" Property="BorderThickness" Value="4" />
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -64,8 +83,12 @@
         </Style>
     </Window.Resources>
 
+<<<<<<< Updated upstream
     <Grid Name="grid">
 
+=======
+    <Grid>
+>>>>>>> Stashed changes
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -80,21 +103,31 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
         <userControls:ChronoButton
-            x:Name="btnSave" Grid.Row="5" Grid.Column="1"
+            x:Name="BtnSave" Grid.Row="5" Grid.Column="1"
             ContentText="Save"
+<<<<<<< Updated upstream
             Color="#FFA5B0"
             ButtonBase.Click="btnSave_Click"
             />
+=======
+            Color="PaleGreen"
+            ButtonBase.Click="btnSave_Click" />
+>>>>>>> Stashed changes
         <userControls:ChronoButton
-            x:Name="btnLoad" Grid.Row="5" Grid.Column="0"
+            x:Name="BtnLoad" Grid.Row="5" Grid.Column="0"
             ContentText="Load"
             Color="#C9D8E9"
             ButtonBase.Click="btnLoad_Click"
             />
         <userControls:ChronoButton
-            x:Name="btnDelete" Grid.Row="5" Grid.Column="2"
+            x:Name="BtnDelete" Grid.Row="5" Grid.Column="2"
             ContentText="Delete"
+<<<<<<< Updated upstream
             Color="AliceBlue"
             ButtonBase.Click="btnDelete_Click"
             />
@@ -113,6 +146,11 @@
             </StackPanel>
         </RadioButton>
 
+=======
+            Color="PaleVioletRed"
+            ButtonBase.Click="btnDelete_Click" />
+        
+>>>>>>> Stashed changes
         <RadioButton GroupName="Slots"
                      Style="{StaticResource SlotRadioButton}"
                      Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"
@@ -132,6 +170,7 @@
                      IsChecked="{Binding SlotArray[2], Mode=TwoWay}"
                      Click="SlotRadioButton_Click">
             <StackPanel Style="{StaticResource StackPanelStyle}">
+<<<<<<< Updated upstream
                 <Image
                         Source="{Binding ImageSource[2]}" 
                        Style="{StaticResource SlotImage}"/>
@@ -154,5 +193,53 @@
                    HorizontalAlignment="Center" VerticalAlignment="Center"
                    FontSize="20"
                    Text="{Binding Status}"/>
+=======
+                <Image x:Name="SlotImage1"
+                       Style="{StaticResource SlotImage}" />
+                <TextBlock Text="Слот 1"
+                           Style="{StaticResource SlotText}" />
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Slots"
+                     Style="{StaticResource SlotRadioButton}"
+                     Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"
+                     IsChecked="{Binding SlotArray[1], Mode=TwoWay}"
+                     Click="SlotRadioButton_Click">
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image x:Name="SlotImage2"
+                       Style="{StaticResource SlotImage}" />
+                <TextBlock Text="Слот 2"
+                           Style="{StaticResource SlotText}" />
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Slots"
+                     Style="{StaticResource SlotRadioButton}"
+                     Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"
+                     IsChecked="{Binding SlotArray[2], Mode=TwoWay}"
+                     Click="SlotRadioButton_Click">
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image x:Name="SlotImage3"
+                       Style="{StaticResource SlotImage}" />
+                <TextBlock Text="Слот 3"
+                           Style="{StaticResource SlotText}" />
+            </StackPanel>
+        </RadioButton>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="{Binding Status}" />
+        
+        <!-- debug -->  
+        <!--<TextBlock Name="path"
+                   Grid.Row="6" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="{Binding debugSavePath}" />-->
+
+
+>>>>>>> Stashed changes
     </Grid>
 </Window>

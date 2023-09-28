@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.6.33723.286
+VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChronoSaver", "ChronoSaver.csproj", "{B61D10FD-5153-4A21-A5EA-0006F2ECFC76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChronoSaver", "ChronoSaver.csproj", "{60D3B32A-F30B-44D2-B22A-B696A38C17E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B61D10FD-5153-4A21-A5EA-0006F2ECFC76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B61D10FD-5153-4A21-A5EA-0006F2ECFC76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B61D10FD-5153-4A21-A5EA-0006F2ECFC76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B61D10FD-5153-4A21-A5EA-0006F2ECFC76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60D3B32A-F30B-44D2-B22A-B696A38C17E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60D3B32A-F30B-44D2-B22A-B696A38C17E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60D3B32A-F30B-44D2-B22A-B696A38C17E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60D3B32A-F30B-44D2-B22A-B696A38C17E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {83714DA6-16FD-4049-9E7F-51E69FC69752}
+		SolutionGuid = {E01F8A08-B26F-4469-9CCB-C940C59DA05B}
 	EndGlobalSection
 EndGlobal
