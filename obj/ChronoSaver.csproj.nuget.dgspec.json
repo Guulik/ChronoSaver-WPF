@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "P:\\Games\\The legend of Zelda\\ChronoSaver\\ChronoSaver.csproj": {}
+    "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj": {}
   },
   "projects": {
-    "P:\\Games\\The legend of Zelda\\ChronoSaver\\ChronoSaver.csproj": {
+    "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "P:\\Games\\The legend of Zelda\\ChronoSaver\\ChronoSaver.csproj",
+        "projectUniqueName": "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj",
         "projectName": "ChronoSaver",
-        "projectPath": "P:\\Games\\The legend of Zelda\\ChronoSaver\\ChronoSaver.csproj",
+        "projectPath": "O:\\Desktop\\ChronoSaver\\ChronoSaver.csproj",
         "packagesPath": "C:\\Users\\sasha\\.nuget\\packages\\",
-        "outputPath": "P:\\Games\\The legend of Zelda\\ChronoSaver\\obj\\",
+        "outputPath": "O:\\Desktop\\ChronoSaver\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
