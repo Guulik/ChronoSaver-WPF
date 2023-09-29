@@ -27,4 +27,8 @@
                 Content="BTN" FontSize="20"
                 />
     </Grid>
+<<<<<<< Updated upstream
 </UserControl>
+=======
+</UserControl>
+>>>>>>> Stashed changes

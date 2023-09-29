@@ -2,11 +2,7 @@
 using System;
 ========
 ﻿using System;
-<<<<<<< Updated upstream
->>>>>>>> Stashed changes:FileMethods.cs
-=======
 >>>>>>>> Stashed changes:Modules/FileMethods.cs
->>>>>>> Stashed changes
 using System.IO;
 
 namespace ChronoSaver
@@ -45,11 +41,7 @@ namespace ChronoSaver
                 {
                     Directory.CreateDirectory(destinationPath);
                 }
-<<<<<<< Updated upstream
->>>>>>>> Stashed changes:FileMethods.cs
-=======
 >>>>>>>> Stashed changes:Modules/FileMethods.cs
->>>>>>> Stashed changes
 
                 DirectoryInfo sourceDirInfo = new DirectoryInfo(sourcePath);
                 foreach (FileInfo file in sourceDirInfo.GetFiles())
@@ -76,11 +68,7 @@ namespace ChronoSaver
             }
         }
 
-<<<<<<< Updated upstream
->>>>>>>> Stashed changes:FileMethods.cs
-=======
 >>>>>>>> Stashed changes:Modules/FileMethods.cs
->>>>>>> Stashed changes
         public static void DeleteFolder(string folderPath)
         {
             try
@@ -88,11 +76,7 @@ namespace ChronoSaver
 <<<<<<<< Updated upstream:Source/FileMethods.cs
                 // Проверяем, существует ли папка
 ========
-<<<<<<< Updated upstream
->>>>>>>> Stashed changes:FileMethods.cs
-=======
 >>>>>>>> Stashed changes:Modules/FileMethods.cs
->>>>>>> Stashed changes
                 if (Directory.Exists(folderPath))
                 {
                     // Удаляем папку и её содержимое
@@ -119,10 +103,6 @@ namespace ChronoSaver
             
             File.Copy(sourceFilePath, destinationFilePath, true);
         }
-<<<<<<< Updated upstream
->>>>>>>> Stashed changes:FileMethods.cs
-=======
 >>>>>>>> Stashed changes:Modules/FileMethods.cs
->>>>>>> Stashed changes
     }
 }
