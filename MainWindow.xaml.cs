@@ -15,9 +15,9 @@ namespace ChronoSaver
         public static readonly string ChronoSaverPath =  Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..");
         
         public static readonly string ChronosSourcePath =
-            $@"P:\Games\The legend of Zelda\mlc01\usr\save\00050000\101c9500\user\80000001";
+            $@"{ChronoSaverPath}\..\mlc01\usr\save\00050000\101c9500\user\80000001";
         static string testPath =
-            $@"{ChronoSaverPath}\test\destination";//for load function
+            $@"{ChronoSaverPath}\test\destination";//for test
     }
 
     public partial class MainWindow : INotifyPropertyChanged
