@@ -16,8 +16,8 @@ namespace ChronoSaver
         
         public static readonly string ChronosSourcePath =
             $@"{ChronoSaverPath}\..\mlc01\usr\save\00050000\101c9500\user\80000001";
-        static string testPath =
-            $@"{ChronoSaverPath}\test\destination";//for load function
+        public static string testPath =
+            $@"{ChronoSaverPath}\testSource";//for load function
     }
 
     public partial class MainWindow : INotifyPropertyChanged
