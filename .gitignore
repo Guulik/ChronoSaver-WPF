@@ -13,6 +13,9 @@ appsettings.json
 *.suo
 *.user
 *.sln.iml
+*.sln
+*.csproj
+
 
 # Логи и файлы сборки
 *.log
