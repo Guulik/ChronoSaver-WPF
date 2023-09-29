@@ -61,7 +61,7 @@ namespace ChronoSaver.View.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ChronoSaver;V1.0.0.0;component/view/usercontrols/chronobutton.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ChronoSaver;component/view/usercontrols/chronobutton.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\UserControls\ChronoButton.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

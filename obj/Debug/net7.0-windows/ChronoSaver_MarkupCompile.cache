@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-O:\Desktop\ChronoSaver\obj\Debug\net7.0-windows\
+P:\Games\The legend of Zelda\ChronoSaver\obj\Debug\net7.0-windows\
 ChronoSaver
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-O:\Desktop\ChronoSaver\App.xaml
+P:\Games\The legend of Zelda\ChronoSaver\App.xaml
 21769768101
 
-71766509647
+7-617844837
 198-759771931
 MainWindow.xaml;View\UserControls\ChronoButton.xaml;
 
