@@ -21,3 +21,26 @@ P:\Games\The legend of Zelda\ChronoSaver\obj\Release\net7.0-windows\refint\Chron
 P:\Games\The legend of Zelda\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.pdb
 P:\Games\The legend of Zelda\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.genruntimeconfig.cache
 P:\Games\The legend of Zelda\ChronoSaver\obj\Release\net7.0-windows\ref\ChronoSaver.dll
+O:\Desktop\temp\ChronoSaver\bin\Release\net7.0-windows\ChronoSaver.exe
+O:\Desktop\temp\ChronoSaver\bin\Release\net7.0-windows\ChronoSaver.deps.json
+O:\Desktop\temp\ChronoSaver\bin\Release\net7.0-windows\ChronoSaver.runtimeconfig.json
+O:\Desktop\temp\ChronoSaver\bin\Release\net7.0-windows\ChronoSaver.dll
+O:\Desktop\temp\ChronoSaver\bin\Release\net7.0-windows\ChronoSaver.pdb
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\MainWindow.g.cs
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\View\UserControls\ChronoButton.g.cs
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\App.g.cs
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver_MarkupCompile.cache
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver_MarkupCompile.lref
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\MainWindow.baml
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\View\UserControls\ChronoButton.baml
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.g.resources
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.GeneratedMSBuildEditorConfig.editorconfig
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.AssemblyInfoInputs.cache
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.AssemblyInfo.cs
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.csproj.CoreCompileInputs.cache
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.dll
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\refint\ChronoSaver.dll
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.pdb
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ChronoSaver.genruntimeconfig.cache
+O:\Desktop\temp\ChronoSaver\obj\Release\net7.0-windows\ref\ChronoSaver.dll

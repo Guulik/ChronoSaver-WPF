@@ -92,7 +92,7 @@ namespace ChronoSaver
         }
         private BitmapImage LoadEmptyBitmap()
         {
-            return new BitmapImage(new Uri($@"{Paths.ChronoSaverPath}\usrSaves\empty.jpg", UriKind.Absolute));
+            return new BitmapImage(new Uri($@"{Paths.ChronoSaverPath}\Modules\empty.jpg", UriKind.Absolute));
         }
         
         
