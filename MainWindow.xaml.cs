@@ -16,8 +16,8 @@ namespace ChronoSaver
         
         public static readonly string ChronosSourcePath =
             $@"{ChronoSaverPath}\..\mlc01\usr\save\00050000\101c9500\user\80000001";
-        static string testPath =
-            $@"{ChronoSaverPath}\test\destination";//for load function
+        public static string testPath =
+            $@"{ChronoSaverPath}\testSource";//for load function
     }
 
     public partial class MainWindow : INotifyPropertyChanged
@@ -76,7 +76,7 @@ namespace ChronoSaver
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            FileMethods.CopyDirectory(Paths.ChronosSourcePath, _userChosenPath);
+            FileMethods.CopyDirectory(Paths.testPath, _userChosenPath);
             _imagesHandler.UpdateImage();
 
             Status = _statuses[0];
@@ -85,7 +85,7 @@ namespace ChronoSaver
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             if (!Directory.Exists(_userChosenPath)) return;
-            FileMethods.CopyDirectory(_userChosenPath, Paths.ChronosSourcePath);
+            FileMethods.CopyDirectory(_userChosenPath, Paths.testPath);
 
             Status = _statuses[1];
         }

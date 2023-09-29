@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ChronoSaver"
         xmlns:userControls="clr-namespace:ChronoSaver.View.UserControls"
         d:DataContext="{d:DesignInstance Type=local:MainWindow}"
-
+        ResizeMode="CanMinimize"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
