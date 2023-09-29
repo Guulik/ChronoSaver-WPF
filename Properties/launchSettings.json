@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "ChronoSaver": {
+      "commandName": "Project",
+      "commandLineArgs": "/runas",
+      "nativeDebugging": true
+    }
+  }
+}

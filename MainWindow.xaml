@@ -1,0 +1,164 @@
+﻿<Window x:Class="ChronoSaver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChronoSaver"
+        xmlns:userControls="clr-namespace:ChronoSaver.View.UserControls"
+        d:DataContext="{d:DesignInstance Type=local:MainWindow}"
+
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                    <Setter Property="Margin" Value="5" />
+                    <Setter Property="VerticalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Width" Value="140" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style TargetType="RadioButton" x:Key="SlotRadioButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <Border x:Name="Slot_"
+                                    BorderBrush="Black"
+                                    BorderThickness="2"
+                                    Background="#E5FFF7"
+                                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Slot_" Property="BorderBrush" Value="Chocolate" />
+                                <Setter TargetName="Slot_" Property="BorderThickness" Value="4" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Width" Value="256" />
+            <Setter Property="Height" Value="180" />
+            <Setter Property="Grid.RowSpan" Value="3" />
+        </Style>
+
+        <Style TargetType="StackPanel" x:Key="StackPanelStyle">
+            <Setter Property="Orientation" Value="Vertical" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="SlotText">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="Image" x:Key="SlotImage">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+            <Setter Property="Width" Value="256" />
+            <Setter Property="Height" Value="140" />
+        </Style>
+
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <userControls:ChronoButton
+            x:Name="BtnSave" Grid.Row="5" Grid.Column="1"
+            ContentText="Save"
+            Color="PaleGreen"
+            ButtonBase.Click="btnSave_Click" />
+        <userControls:ChronoButton
+            x:Name="BtnLoad" Grid.Row="5" Grid.Column="0"
+            ContentText="Load"
+            Color="#C9D8E9"
+            ButtonBase.Click="btnLoad_Click" />
+        <userControls:ChronoButton
+            x:Name="BtnDelete" Grid.Row="5" Grid.Column="2"
+            ContentText="Delete"
+            Color="PaleVioletRed"
+            ButtonBase.Click="btnDelete_Click" />
+        
+        <RadioButton GroupName="Slots"
+                     Style="{StaticResource SlotRadioButton}"
+                     Grid.Column="0" Grid.Row="1" Grid.RowSpan="4"
+                     IsChecked="{Binding SlotArray[0], Mode=TwoWay}"
+                     Click="SlotRadioButton_Click">
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image x:Name="SlotImage1"
+                       Style="{StaticResource SlotImage}" />
+                <TextBlock Text="Слот 1"
+                           Style="{StaticResource SlotText}" />
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Slots"
+                     Style="{StaticResource SlotRadioButton}"
+                     Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"
+                     IsChecked="{Binding SlotArray[1], Mode=TwoWay}"
+                     Click="SlotRadioButton_Click">
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image x:Name="SlotImage2"
+                       Style="{StaticResource SlotImage}" />
+                <TextBlock Text="Слот 2"
+                           Style="{StaticResource SlotText}" />
+            </StackPanel>
+        </RadioButton>
+
+        <RadioButton GroupName="Slots"
+                     Style="{StaticResource SlotRadioButton}"
+                     Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"
+                     IsChecked="{Binding SlotArray[2], Mode=TwoWay}"
+                     Click="SlotRadioButton_Click">
+            <StackPanel Style="{StaticResource StackPanelStyle}">
+                <Image x:Name="SlotImage3"
+                       Style="{StaticResource SlotImage}" />
+                <TextBlock Text="Слот 3"
+                           Style="{StaticResource SlotText}" />
+            </StackPanel>
+        </RadioButton>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="{Binding Status}" />
+        
+        <!-- debug -->  
+        <!--<TextBlock Name="path"
+                   Grid.Row="6" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="{Binding debugSavePath}" />-->
+
+
+    </Grid>
+</Window>
