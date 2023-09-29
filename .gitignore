@@ -1,0 +1,24 @@
+# Папки и файлы, которые можно исключить
+bin/
+obj/
+.vs/
+.idea/
+
+# Временные файлы и папки
+[Tt]humbs.db
+*.DS_Store
+
+# Файлы с конфигурацией
+appsettings.json
+*.suo
+*.user
+*.sln.iml
+
+# Логи и файлы сборки
+*.log
+*.dll
+*.exe
+*.pdb
+
+# Восстановление NuGet-пакетов
+packages/
