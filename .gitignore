@@ -1,6 +1,4 @@
 # Папки и файлы, которые можно исключить
-bin/
-obj/
 .vs/
 .idea/
 
@@ -15,13 +13,3 @@ appsettings.json
 *.sln.iml
 *.sln
 *.csproj
-
-
-# Логи и файлы сборки
-*.log
-*.dll
-*.exe
-*.pdb
-
-# Восстановление NuGet-пакетов
-packages/
