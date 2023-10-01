@@ -116,7 +116,7 @@
             <StackPanel Style="{StaticResource StackPanelStyle}">
                 <Image x:Name="SlotImage1"
                        Style="{StaticResource SlotImage}" />
-                <TextBlock Text="Слот 1"
+                <TextBlock Text="Slot 1"
                            Style="{StaticResource SlotText}" />
             </StackPanel>
         </RadioButton>
@@ -129,7 +129,7 @@
             <StackPanel Style="{StaticResource StackPanelStyle}">
                 <Image x:Name="SlotImage2"
                        Style="{StaticResource SlotImage}" />
-                <TextBlock Text="Слот 2"
+                <TextBlock Text="Slot 2"
                            Style="{StaticResource SlotText}" />
             </StackPanel>
         </RadioButton>
@@ -142,7 +142,7 @@
             <StackPanel Style="{StaticResource StackPanelStyle}">
                 <Image x:Name="SlotImage3"
                        Style="{StaticResource SlotImage}" />
-                <TextBlock Text="Слот 3"
+                <TextBlock Text="Slot 3"
                            Style="{StaticResource SlotText}" />
             </StackPanel>
         </RadioButton>
