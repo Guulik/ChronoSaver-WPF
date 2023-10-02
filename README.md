@@ -1,5 +1,6 @@
 # ChronoSaver-WPF
-Chrono Saver is save manager for the game The Legend of Zelda Breath of the Wild, emulated by Cemu for PC. Chrono - your save, your entire adventure.
+Chrono Saver is save manager for the game The Legend of Zelda Breath of the Wild, emulated by Cemu for PC. Chrono - your save, your entire adventure.  
+The current version of the app is an example of the implementation of saves using Zelda as an example. This can serve as a kind of base for further expansion and application to any of your games
 
 Install it directly to the folder with Cemu.exe. It should look like this {yourPath}\The Legend of Zelda(folder with Cemu.exe)\ChronoSaver  
 
